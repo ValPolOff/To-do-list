@@ -8,10 +8,13 @@
     /*position: absolute;*/
     width: 740px;
     height: 47px;
-    left: 604px;
-    top: 254px;
+
     background-color: aliceblue;
     border-radius: 10px;
+
+    position: fixed;
+    right: 10%;
+    top: 33%;
 }
 
 .userName {
@@ -52,8 +55,8 @@
 
 .imageProf {
      position: absolute;
-     width: 16px;
-     height: 16px;
+     width: 35vw;
+     height: 10vh;
      left: 600px;
      top: 14px;
 

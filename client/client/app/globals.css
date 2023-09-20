@@ -17,8 +17,8 @@
 }
 
 body {
-  position: relative;
-  width: 1366px;
-  height: 1024px;
+  /*position: relative;*/
+  width: 100vw;
+  height: 100vh;
   background: linear-gradient(299.75deg, #B9D5FF 0%, #F6D1FC 98.93%);
 }
