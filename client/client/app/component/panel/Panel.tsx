@@ -26,13 +26,13 @@ export default function Panel() {
         <div >
                 
                 <button className={s.panelToday}>
-                    <Image alt='today' src='Vector.svg' width={19} height={19}/>
+                    <Image alt='today' src='Vector.svg' width={22} height={22}/>
                     <div>Today</div>
                 </button>
             
             
                 <button className={s.panelAll} onClick={toggle}>
-                    <Image alt='all' src='done 1.svg' width={19} height={19}/>
+                    <Image alt='all' src='done 1.svg' width={27} height={27}/>
                     All
                 </button>
 
@@ -45,11 +45,11 @@ export default function Panel() {
                 </Modal>
                
                 <button className={s.panelData} >
-                    <Image alt='data' src='arrows 1.svg' width={19} height={19}/>
+                    <Image alt='data' src='arrows 1.svg' width={27} height={27}/>
                     Data
                 </button>
                 <button className={s.panelAddTask} onClick={toggle}>
-                    <Image alt='Add task' src='Vector (1).svg' width={19} height={19}/>
+                    <Image alt='Add task' src='Vector (1).svg' width={25} height={25}/>
                     Add task
                 </button>
 

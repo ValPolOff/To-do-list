@@ -6,7 +6,7 @@ export default function TexArea () {
         <div className={s.text}>
             
             <div className={s.task}>
-                <Image alt='ok' src='Group.svg' width={20} height={20}/>
+                <Image alt='ok' src='Group.svg' width={25} height={25}/>
                 <div className={s.task1}>Task</div>
                 <button>
                     <Image alt='settings' src='Vector (2).svg' width={4} height={4}/>
