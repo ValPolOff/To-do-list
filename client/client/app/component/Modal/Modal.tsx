@@ -20,12 +20,13 @@ export default function Modal(props: ModalType) {
   
   const [taskN, setTask] = useState('')
 
-  const [textTask, setTextTask] = useState(['Task 1', 'Task 2']);
+  const [textTask, setTextTask] = useState(['Task']);
   let pushText = () => {
     setTextTask([...textTask, taskN])
     //textTask.push(taskN)
     console.log(textTask)
-    props.task(textTask)
+    //props.task(textTask)
+    props.task([...textTask,taskN])
   }
   /*const Rename = (event:string) => {
     props.onChange(event.target.value)
@@ -54,8 +55,7 @@ export default function Modal(props: ModalType) {
                         Close
                       </button>
                     </div>
-                  </div>
-
+            </div>
                 </div>
               </div>
             )}

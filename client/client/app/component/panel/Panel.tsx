@@ -15,8 +15,10 @@ export default function Panel() {
 
     
    let initialState = ['All']
-    const [textTask, setTextTask] = useState(['Task 1', 'Task 2']);
+    const [textTask, setTextTask] = useState(['Task']);
+ 
 
+    
 
     
     const { isOpen, toggle } = useModal();
@@ -28,7 +30,7 @@ export default function Panel() {
     }*/
     //const { isOpen, toggle } = useModal();
 
-  
+    //const [doDont,setDoDont] = useState(false)
     
     let t = textTask.map((text1,index)=>{
         return (
@@ -38,11 +40,12 @@ export default function Panel() {
                     <div className={s.task}>
                         <Image alt='ok' src='Group.svg' width={25} height={25} />
                         <div className={s.task1}>{text1}</div>
-                        <button onClick={() => { toggle(); setValue('4'); }}>
-                            <Image alt='settings' src='Vector (2).svg' width={4} height={4} />
+                        <button onClick={() => { toggle(); setValue('4'); /*setDoDont(true)*/ }}>
+                            <Image alt='settings'  src='Vector (2).svg' width={4} height={4} />
                         </button>
 
                     </div>
+                    //TODO - vinesti v otdelniy compnent
                 
                 
             </div>
@@ -78,7 +81,9 @@ export default function Panel() {
             {t}
             </div>
             </div>
-  
+            
+
+
             <Modal isOpen={isOpen} toggle={toggle} butt={value} name = {setName} task={setTextTask}/>
  
         </div>
