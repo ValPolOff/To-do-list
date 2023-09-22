@@ -8,7 +8,9 @@ interface ModalType {
   children?: ReactNode;
   isOpen: boolean;
   toggle: () => void;
-  butt: string
+  butt: string;
+  name: (obj:string) => void;
+ 
 }
 
 export default function Modal(props: ModalType) {
@@ -16,6 +18,11 @@ export default function Modal(props: ModalType) {
 
   const [value,setValue] = useState('')
   
+  //const [name, rename] = useState('All')
+  /*const Rename = (event:string) => {
+    props.onChange(event.target.value)
+  }*/
+
 
   const ddd = () => {
     switch (props.butt) {
@@ -84,15 +91,15 @@ export default function Modal(props: ModalType) {
                     {props.children}
 
                     <div className={s.all}>
-                      <button className={s.allAll}>
+                      <button className={s.allAll}  onClick={() => props.name('All')}>
                         <Image src='done 1 (1).svg' width={25} height={25} alt='yesAll'/>
                         All
                         </button>
-                      <button className={s.allDone}>
+                      <button className={s.allDone}  onClick={() => props.name('Done')}>
                        <Image src='done 1 (1).svg' width={25} height={25} alt='yesDone'/>
                        Done
                       </button>
-                      <button className={s.allUndone}>
+                      <button className={s.allUndone}  onClick={() => props.name('Undone')}>
                         <Image src='done 1 (1).svg' width={25} height={25} alt='yesUndone'/>
                         Undone 
                         </button>
@@ -123,7 +130,9 @@ export default function Modal(props: ModalType) {
                       </div>
 
                     </div>
-                    <Modal isOpen={isOpen} toggle={toggle} butt={value} />
+                    {//name no use this component-----------------------------------------------------      
+                    }
+                    <Modal isOpen={isOpen} toggle={toggle} butt={value} name ={setValue}/>
                   </div>
                 )}
               </>

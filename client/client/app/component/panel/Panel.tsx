@@ -6,21 +6,23 @@ import useModal from "../../hook/useModal";
 import Image from 'next/image'
 import s from './Panel.module.css'
 //import Modal from '../Modal/Modal'
-import { useState } from 'react';
+import React, { ReactNode, createContext, useContext, useState } from 'react';
 import { document } from "postcss";
 
-/*function sortData() {
-    return(
-        <button className={s.panel2}></button>
-    )
-}*/
+
 
 export default function Panel() {
+
+    
     const { isOpen, toggle } = useModal();
-
     const [value,setValue] = useState('')
-    //const { isOpen, toggle } = useModal();
 
+    const [name,setName] = useState('')
+    /*const Rename = (name:string) => {
+        setName(name)
+    }*/
+    //const { isOpen, toggle } = useModal();
+    
     return (
         <div>
             <div >
@@ -33,7 +35,7 @@ export default function Panel() {
 
                 <button className={s.panelAll} onClick={() => { toggle(); setValue('3'); }}>
                     <Image alt='all' src='done 1.svg' width={27} height={27} />
-                    All
+                    {name}
                 </button>
 
 
@@ -46,8 +48,11 @@ export default function Panel() {
                     Add task
                 </button>
 
+
             </div>
-            <Modal isOpen={isOpen} toggle={toggle} butt={value} />
+  
+            <Modal isOpen={isOpen} toggle={toggle} butt={value} name = {setName}/>
+ 
         </div>
     )
 }

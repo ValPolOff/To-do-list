@@ -8,7 +8,7 @@ import Modal from '../Modal/Modal';
 export default function TexArea () {
     const { isOpen, toggle } = useModal();
     const [value,setValue] = useState('');
-    const [textTask, settextTask] = useState();
+    const [textTask, setTextTask] = useState();
 
     return (
         <div>
@@ -23,7 +23,9 @@ export default function TexArea () {
                 
             </div>
         </div>
-                <Modal isOpen={isOpen} toggle={toggle} butt={value} />
+                    {//name no use this component-----------------------------------------------------      
+                    }
+                <Modal isOpen={isOpen} toggle={toggle} butt={value} name={setValue}/>
         </div>
     )
 }

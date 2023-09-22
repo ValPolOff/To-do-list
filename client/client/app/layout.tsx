@@ -5,6 +5,7 @@ import Header from './component/Header/Header'
 import TexArea from './component/content/TextArea'
 import Panel from './component/panel/Panel'
 
+
 //const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -23,7 +24,7 @@ export default function RootLayout({
         <Header />
         {children}
         <TexArea />
-        <Panel />
+        <Panel/>
         </body>
     </html>
   )
