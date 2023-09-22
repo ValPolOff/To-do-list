@@ -14,15 +14,42 @@ import { document } from "postcss";
 export default function Panel() {
 
     
+   let initialState = ['All']
+    const [textTask, setTextTask] = useState(['Task 1', 'Task 2']);
+
+
+    
     const { isOpen, toggle } = useModal();
     const [value,setValue] = useState('')
 
-    const [name,setName] = useState('')
+    const [name,setName] = useState('All')
     /*const Rename = (name:string) => {
         setName(name)
     }*/
     //const { isOpen, toggle } = useModal();
+
+  
     
+    let t = textTask.map((text1,index)=>{
+        return (
+            <div key={index}>
+                
+
+                    <div className={s.task}>
+                        <Image alt='ok' src='Group.svg' width={25} height={25} />
+                        <div className={s.task1}>{text1}</div>
+                        <button onClick={() => { toggle(); setValue('4'); }}>
+                            <Image alt='settings' src='Vector (2).svg' width={4} height={4} />
+                        </button>
+
+                    </div>
+                
+                
+            </div>
+        )
+    })
+
+
     return (
         <div>
             <div >
@@ -47,11 +74,12 @@ export default function Panel() {
                     <Image alt='Add task' src='Vector (1).svg' width={25} height={25} />
                     Add task
                 </button>
-
-
+                <div className={s.text}>
+            {t}
+            </div>
             </div>
   
-            <Modal isOpen={isOpen} toggle={toggle} butt={value} name = {setName}/>
+            <Modal isOpen={isOpen} toggle={toggle} butt={value} name = {setName} task={setTextTask}/>
  
         </div>
     )

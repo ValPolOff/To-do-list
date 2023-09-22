@@ -2,7 +2,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 //import { Inter } from 'next/font/google'
 import Header from './component/Header/Header'
-import TexArea from './component/content/TextArea'
+
 import Panel from './component/panel/Panel'
 
 
@@ -23,7 +23,7 @@ export default function RootLayout({
       <body>
         <Header />
         {children}
-        <TexArea />
+        
         <Panel/>
         </body>
     </html>

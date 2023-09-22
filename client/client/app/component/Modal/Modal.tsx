@@ -2,7 +2,7 @@ import React, { ReactNode, useState } from "react";
 import s from './Modal.module.css'
 import Image from "next/image";
 import useModal from "@/app/hook/useModal";
-import TexArea from "../content/TextArea";
+
 
 interface ModalType {
   children?: ReactNode;
@@ -10,7 +10,7 @@ interface ModalType {
   toggle: () => void;
   butt: string;
   name: (obj:string) => void;
- 
+  task: (obj:string[]) => void;
 }
 
 export default function Modal(props: ModalType) {
@@ -18,11 +18,19 @@ export default function Modal(props: ModalType) {
 
   const [value,setValue] = useState('')
   
-  //const [name, rename] = useState('All')
+  const [taskN, setTask] = useState('')
+
+  const [textTask, setTextTask] = useState(['Task 1', 'Task 2']);
+  let pushText = () => {
+    setTextTask([...textTask, taskN])
+    //textTask.push(taskN)
+    console.log(textTask)
+    props.task(textTask)
+  }
   /*const Rename = (event:string) => {
     props.onChange(event.target.value)
   }*/
-
+  
 
   const ddd = () => {
     switch (props.butt) {
@@ -35,9 +43,9 @@ export default function Modal(props: ModalType) {
                   {props.children}
                   <div>
                     <div className={s.h1}>Create task</div>
-                    <input className={s.interTask} placeholder="    Enter text..." ></input>
+                    <input className={s.interTask} placeholder="    Enter text..." value={taskN} onChange={(event) => setTask(event.target.value)}></input>
                     <div className={s.blockH1}>
-                      <button className={s.save}>
+                      <button className={s.save} onClick={pushText}>
                         <Image alt='okTask' src='Check_ring.svg' width={25} height={25} />
                         Save
                       </button>
@@ -132,7 +140,7 @@ export default function Modal(props: ModalType) {
                     </div>
                     {//name no use this component-----------------------------------------------------      
                     }
-                    <Modal isOpen={isOpen} toggle={toggle} butt={value} name ={setValue}/>
+                    <Modal isOpen={isOpen} toggle={toggle} butt={value} name ={setValue} />
                   </div>
                 )}
               </>
