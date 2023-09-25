@@ -30,7 +30,7 @@ export default function ModalDelete (props: ModalType) {
                       <Image alt='okTask' src='material-symbols_today (1).svg' width={25} height={25} />
                       Delete
                     </button>
-                    <button className={s.close}>
+                    <button className={s.close} onClick={props.toggle}>
                       <Image alt='noTask' src='material-symbols_today.svg' width={25} height={25} />
                       Close
                     </button>

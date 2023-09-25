@@ -27,15 +27,15 @@ export default function PopUp (props:ModalType) {
     <>
       {props.isOpen && (
         <div onClick={props.toggle} >
-          <div onClick={(e) => e.stopPropagation()} className={s.modalBox3}>
+          <div /*onClick={(e) => e.stopPropagation()}*/ className={s.modalBox3}>
             {props.children}
               
             <div >
               <button>
-                <Image src='Group (1).svg' width={20} height={20} alt='yesAll' />
+                <Image src='Group (1).svg' width={17} height={17} alt='yesAll' />
               </button>
               <button onClick={() => { toggle();}}>
-                <Image src='delete 4.svg' width={20} height={20} alt='yesDone' />
+                <Image src='delete 4.svg' width={17} height={17} alt='yesDone' />
                 
               </button>
                 

@@ -33,7 +33,25 @@
     /*top: 337px;
     left: 607px;*/
     border-radius: 10px;
+    position: fixed;
+    right: 39%;
+    top: 45%;
+
     
+}
+
+.panelAll2 {
+    display: flex;
+    /*flex-direction: column;*/
+    align-items: flex-start;
+    padding: 10px;
+    gap: 23px;
+    width: 185px;
+    height: 40px;
+    /*top: 337px;
+    left: 607px;*/
+    border-radius: 10px;
+    color: rgba(147, 51, 234, 1);
     position: fixed;
     right: 39%;
     top: 45%;
@@ -106,6 +124,7 @@
     /*top: 337px;
     left: 607px;*/
     border-radius: 10px;
+    color: rgba(147, 51, 234, 1);
     background: rgba(147, 51, 234, 0.06);
     position: fixed;
     right: 39%;
@@ -189,6 +208,9 @@
 .panelData:focus {
     background: rgba(147, 51, 234, 0.06);
 }
+.panelAll2:focus {
+    background: rgba(147, 51, 234, 0.06);
+}
 
 .text {
     display: flex;
@@ -206,9 +228,9 @@
     /*left: 20%;
     top: 5%;*/
     background-color: white;
-
     padding: 1%;
-    position:fixed;
+    
+    position:absolute;
     right: 10%;
     top: 40%;
 

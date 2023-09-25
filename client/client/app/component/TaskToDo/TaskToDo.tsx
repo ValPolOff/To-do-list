@@ -18,21 +18,26 @@ interface ModalType {
   }
 
 export default function TaskToDo (props:ModalType) {
-    const [value, setValue] = useState('')
+    const [doIt, setDoIt] = useState(false)
     const { isOpen, toggle } = useModal();
     
+
         return (
             <>
             <div key={props.index}>
                     <div className={s.task}>
-                        <Image alt='ok' src='Group.svg' width={25} height={25} />
+                        <button onClick={() => {setDoIt(doIt ? false: true)}}>
+                            {doIt ? (<Image alt='ok' src='Check_ring.svg' width={25} height={25} />):(<Image alt='ok' src='Group.svg' width={25} height={25} />)}
+                            
+
+                        </button>
                         <div className={s.task1}>{props.text1}</div>
                         <button onClick={() => { toggle(); /*setValue('3'); /*setDoDont(true)*/ }}>
                             <Image alt='settings'  src='Vector (2).svg' width={4} height={4} />
                         </button>
-                    <PopUp isOpen={isOpen} toggle={toggle} />
+                        
                     </div>
-                    
+                    <PopUp isOpen={isOpen} toggle={toggle} />
             </div>
             
             </>

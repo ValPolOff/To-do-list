@@ -18,7 +18,7 @@ export default function PopUpSort (props:ModalType) {
     <>
       {props.isOpen && props.value === '2' && (
         <div onClick={props.toggle} className={s.modalOverlay}>
-          <div onClick={(e) => e.stopPropagation()} className={s.modalBox2}>
+          <div /*onClick={(e) => e.stopPropagation()}*/ className={s.modalBox2}>
             {props.children}
 
             <div className={s.all}>

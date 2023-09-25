@@ -23,15 +23,8 @@ export default function Panel() {
     const [value,setValue] = useState('')
     const [name,setName] = useState('All')
 
-    
-    const ToDo = textTask.map((text1,index)=>{
-        return (
-            <TaskToDo index={index} text1={text1}/>
-        )
-    })
-
     return (
-        <div>
+        <div >
             <div >
 
                 <button className={s.panelToday}>
@@ -39,9 +32,9 @@ export default function Panel() {
                     <div>Today</div>
                 </button>
 
-
-                <button className={s.panelAll} onClick={() => {toggle();setValue('2')}}>
-                    <Image alt='all' src='done 1.svg' width={27} height={27} />
+                
+                <button  className={value === '2' ? s.panelAll2 : s.panelAll} onClick={() => {toggle();setValue('2')}}>
+                    {value === '2' ? (<Image src='done 1 (1).svg' width={25} height={25} alt='yes'/>) : (<Image alt='all' src='done 1.svg' width={27} height={27} />) }
                     {name}
                 </button>
 
@@ -56,12 +49,17 @@ export default function Panel() {
                 </button>
                 <div className={s.text}>
                 
-                {ToDo}
+                    {textTask.map((text1,index)=>{
+                return (
+                    <TaskToDo index={index} text1={text1}/>
+                )})
+            }
                 
                 </div>
             
             </div>
-            
+
+        
             <PopUpSort isOpen={isOpen} toggle={toggle} name={setName} value={value}/>
             <ModalSave isOpen={isOpen} toggle={toggle} task={setTextTask} value={value}/>
             
